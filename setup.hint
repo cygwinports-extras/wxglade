@@ -1,4 +1,4 @@
-category: Devel Gnome
+category: Devel
 requires: python python-wx2.8
 sdesc: "wxWidgets GUI builder"
 ldesc: "wxGlade is a GUI designer written in Python with the popular GUI 

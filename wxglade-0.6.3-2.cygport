@@ -5,7 +5,8 @@ inherit python
 DESCRIPTION="wxPython GUI builder"
 HOMEPAGE="http://wxglade.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${ORIG_PN}-${PV}.tar.gz"
-PATCH_URI="mirror://portage/dev-util/${PN}/files/${P}-wxversion.patch"
+PATCH_URI="mirror://portage/dev-util/${PN}/files/${P}-wxversion.patch
+           0.6.3-install.patch"
 
 src_compile() { :; }
 src_test() { :; }
@@ -21,8 +22,8 @@ src_install() {
 	cyginstall PYVER=${PYTHON_VERSION}
 	python_optimize
 
-	mv ${D}/usr/share/doc/python-${PN} ${D}/usr/share/doc/${P}
-	dosym /usr/share/doc/${P}/docs/html ${PYTHON_SITELIB}/${PN}/docs
+	mv ${D}/usr/share/doc/python-${PN} ${D}/usr/share/doc/${PN}
+	dosym /usr/share/doc/${PN}/docs/html ${PYTHON_SITELIB}/${PN}/docs
 
 	insinto /usr/share/pixmaps
 	newins icons/icon.xpm wxglade.xpm
